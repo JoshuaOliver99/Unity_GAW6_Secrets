@@ -2,13 +2,29 @@
 
 public class PlayerCotroller : MonoBehaviour
 {
+    // INVENTORY
+    [SerializeField] GameObject inventoryPanel = null;
+
+    // MOVEMENT
     int speed = 5;
-    void Update()
+
+    private void Start()
     {
-        keyboardInput();
+        inventoryPanel.SetActive(false);
     }
 
-    private void keyboardInput()
+    void Update()
+    {
+        if (!inventoryIsOpen())
+            movementManager(); // Allow movement
+
+        invetoryManager(); // Allow opening inventory
+    }
+
+
+
+
+    private void movementManager()
     {
         // Move left or right
         if (Input.GetKey("a") && !Input.GetKey("d"))
@@ -22,4 +38,26 @@ public class PlayerCotroller : MonoBehaviour
         else if (Input.GetKey("s") && !Input.GetKey("w"))
             transform.position += new Vector3(0, -1 * speed * Time.deltaTime, 0);
     }
+
+    private void invetoryManager()
+    {
+        // Open inventory
+        if (Input.GetKeyDown("q"))
+        {
+            if (inventoryIsOpen())
+                inventoryPanel.SetActive(false);
+            else
+                inventoryPanel.SetActive(true);
+        }
+    }
+
+    private bool inventoryIsOpen()
+    {
+        if (inventoryPanel.activeSelf == true)
+            return true;
+        else
+            return false;
+    }
+
+
 }
