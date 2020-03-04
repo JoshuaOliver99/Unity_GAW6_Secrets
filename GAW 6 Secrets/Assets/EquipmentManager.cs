@@ -17,29 +17,30 @@ public class EquipmentManager : MonoBehaviour
         instance = this;
     }
     #endregion
+    public GameObject player;
+    Equipment[] currentEquipment;// Currently equiped items
 
-    Equipment[] currentEquipment;
-
+    // Callback for unequipping / equipping
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged; // Triggers when the equipment changes
 
-    Inventory inventory;
+    Inventory inventory; // Referance to the inventory
 
     private void Start()
     {
-        inventory = Inventory.instance; // Assign inventory to the inventory instance
+        inventory = Inventory.instance; // Get a referance to the inventory
 
-        int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length; // numSlots = EquipmentSlot.Length
+        int numSlots = System.Enum.GetNames(typeof(EquipmentLocation)).Length; // numSlots = EquipmentLocation.Length
         currentEquipment = new Equipment[numSlots]; // currentEquipment[] of size numSlots
     }
 
 
     public void Equip (Equipment newItem)
     {
-        int slotIndex = (int)newItem.equipmentLocation; // Translates equipmentSlot into int
+        int slotIndex = (int)newItem.equipmentLocation; // Translates equipmentSlot into an index int (e.g. head = 0)
+        Equipment oldItem = null; // Var to hold the old item
 
-        Equipment oldItem = null; // holds the old item
-
+        // if (EquipmentSlot is occupied) add the old item to the inventory
         if (currentEquipment[slotIndex] != null)// Check is EquipmentSlot is occupied
         {
             oldItem = currentEquipment[slotIndex]; // Make oldItem the currently equiped
@@ -58,6 +59,7 @@ public class EquipmentManager : MonoBehaviour
 
     public void Unequip (int slotIndex)
     {
+        // if (EquipmentSlot is occupied)
         if (currentEquipment[slotIndex] != null)// Check is EquipmentSlot is occupied
         {
             Equipment oldItem = currentEquipment[slotIndex]; // Make oldItem the currently equiped
@@ -72,10 +74,27 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
-    void updateEquipedDisplay()
+
+
+    /*
+    public void displayEquipment(GameObject gameObject)
     {
+        for (int i = 0; i < currentEquipment.Length; i++)
+        {
+            // spawn sprites as child of player
+        }
 
     }
+      
+    public List<string> currentFactions()
+    {
+        List<string> factions = new List<string>();
 
-
+        for (int i = 0; i < currentEquipment.Length; i++)
+        {
+            factions + currentEquipment.
+        }
+        return a;
+    }
+    */
 }

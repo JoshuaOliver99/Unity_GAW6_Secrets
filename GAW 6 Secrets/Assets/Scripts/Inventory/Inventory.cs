@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
     public onItemChanged onItemChangedCallback; // Triggers when the inventory changes
 
     public int invSpace = 20; // Inventory space
-    public List<Item> items = new List<Item>(); // Inventory items
+    public List<Item> items = new List<Item>(); // Inventory items of size invSpace
 
     public bool Add (Item item)
     {

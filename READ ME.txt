@@ -1,0 +1,20 @@
+========== Description ==========
+
+
+
+========== Controls ==========
+
+W, A, S, D - Respective directional movement for the player character
+Q - Open inventory (prevents movement)
+
+========== Sources ==========
+
+Brackeys. (2017) EQUIPMENT - Making an RPG in Unity (E07) [Online video] [Accessed on 4th March 2020] https://www.youtube.com/watch?v=d9oLS5hy0zU
+
+Brackeys. (2017) INVENTORY CODE - Making an RPG in Unity (E06) [Online video] [Accessed on 4th March 2020] https://www.youtube.com/watch?v=YLhj7SfaxSE
+
+Brackeys. (2017) INVENTORY UI - Making an RPG in Unity (E05) [Online video] [Accessed on 3rd March 2020] https://www.youtube.com/watch?v=w6_fetj9PIw
+
+Brackeys. (2017) ITEMS - Making an RPG in Unity (E04) [Online video] [Accessed on 3rd March 2020] https://www.youtube.com/watch?v=HQNl3Ff2Lpo
+
+Brackeys. (2017) INTEGRATION 01 - Making an RPG in Unity (E03) [Online video] [Accessed on 3rd March 2020] https://www.youtube.com/watch?v=COckHIIO8vk&t=40s

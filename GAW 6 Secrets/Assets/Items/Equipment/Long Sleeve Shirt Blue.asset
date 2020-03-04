@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Long Sleeve Shirt Blue
   icon: {fileID: 21300000, guid: 9c41c66f000b5104aa65baa464b624f3, type: 3}
-  equipmentSlot: 1
-  factions: 00000000
-  gender: 00000000
+  equipmentLocation: 1
+  faction: 1
+  gender: 0

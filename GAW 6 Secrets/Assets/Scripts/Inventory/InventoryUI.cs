@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-
     public Transform itemsParent;
+    public Transform equipmentParent;
 
-    Inventory inventory;
+    Inventory inventory; // Referance to the Inventory
+    EquipmentManager equipmentManager; // Referance to the EquipmentManager
 
-    InventorySlot[] slots;
+    InventorySlot[] slots; // Reference to all inventory slots
+
 
     void Start()
     {

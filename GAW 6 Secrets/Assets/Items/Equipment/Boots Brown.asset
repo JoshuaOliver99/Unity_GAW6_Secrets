@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Boots Brown
   icon: {fileID: 21300000, guid: 614382e86b1178049a1790a44511ef1d, type: 3}
-  equipmentSlot: 3
-  factions: 00000000
-  gender: 00000000
+  equipmentLocation: 3
+  faction: 1
+  gender: 0
