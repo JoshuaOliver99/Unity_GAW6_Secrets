@@ -22,8 +22,7 @@ public class Inventory : MonoBehaviour
     public onItemChanged onItemChangedCallback; // Triggers when the inventory changes
 
     public int invSpace = 20; // Inventory space
-
-    public List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>(); // Inventory items
 
     public bool Add (Item item)
     {
@@ -43,7 +42,7 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
-        items.Remove(item);
+        items.Remove(item); // Nulls the item
 
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();

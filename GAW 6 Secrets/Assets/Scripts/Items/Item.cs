@@ -8,11 +8,13 @@ public class Item : ScriptableObject
     public string itemName = "New Item";
     public Sprite icon = null;
 
-    public bool head;
-    public bool torso;
-    public bool legs;
-    public bool feet;
-    public bool special;
+    public virtual void Use()
+    {
+        Debug.Log("Using " + itemName);
+    }
 
-    public List<string> factions = new List<string>();
+    public void RemoveFromInventory()
+    {
+        Inventory.instance.Remove(this);
+    }
 }
